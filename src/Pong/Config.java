@@ -2,13 +2,14 @@
 package Pong;
 
 import java.awt.Color;
-import javax.swing.JPanel;
 
 public class Config extends javax.swing.JPanel {
     private Menu m;
+    private Inicio i;
     
-    public Config(Menu m){
+    public Config(Menu m, Inicio i){
         this.m = m;
+        this.i = i;
         initComponents();
     }
     
@@ -132,8 +133,7 @@ public class Config extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarActionPerformed
-        JPanel inicio = new Inicio(m);
-        m.mudarPainel(inicio);
+        m.mudarPainel(i);
     }//GEN-LAST:event_voltarActionPerformed
 
     private void corFundoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corFundoActionPerformed

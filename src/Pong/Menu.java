@@ -5,14 +5,15 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 public class Menu extends javax.swing.JFrame {
-      
+    private Inicio i;
+    
 public Menu() {
     setTitle("Pong em Java");
     setBackground(Color.white);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     initComponents();
-    JPanel inicio = new Inicio(this);
-    mudarPainel(inicio);
+    i = new Inicio(this);
+    mudarPainel(i);
 }
 
 public void mudarPainel(JPanel tela){
