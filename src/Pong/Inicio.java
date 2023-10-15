@@ -1,14 +1,30 @@
 
 package Pong;
 
+import java.awt.Color;
+
 public class Inicio extends javax.swing.JPanel {
     private Menu m;
     private Config c;
+    private Color corFundo = Color.white, corPlayer1 = Color.cyan, 
+    corPlayer2 = Color.red;
     
     public Inicio(Menu m){
         this.m = m;
         c = new Config(m, this);
         initComponents();
+    }
+    
+    public void setCorFundo(Color cor){
+        this.corFundo = cor;
+    }
+    
+    public void setCorPlayer1(Color cor){
+        this.corPlayer1 = cor;
+    }
+        
+    public void setCorPlayer2(Color cor){
+        this.corPlayer2 = cor;
     }
     
     @SuppressWarnings("unchecked")
@@ -19,6 +35,8 @@ public class Inicio extends javax.swing.JPanel {
         configuracoes = new javax.swing.JButton();
         jogar = new javax.swing.JButton();
         sair = new javax.swing.JButton();
+
+        inicio.setPreferredSize(new java.awt.Dimension(767, 508));
 
         configuracoes.setFont(new java.awt.Font("Cambria", 0, 30)); // NOI18N
         configuracoes.setText("Configurações");
@@ -55,24 +73,24 @@ public class Inicio extends javax.swing.JPanel {
         inicioLayout.setHorizontalGroup(
             inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(inicioLayout.createSequentialGroup()
-                .addContainerGap(190, Short.MAX_VALUE)
+                .addContainerGap(206, Short.MAX_VALUE)
                 .addGroup(inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jogar, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(sair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(configuracoes, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)))
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
         inicioLayout.setVerticalGroup(
             inicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inicioLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(54, Short.MAX_VALUE)
                 .addComponent(jogar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(configuracoes, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addComponent(sair, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -92,7 +110,8 @@ public class Inicio extends javax.swing.JPanel {
     }//GEN-LAST:event_sairActionPerformed
 
     private void jogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jogarActionPerformed
-        this.setVisible(false);
+        Jogar j = new Jogar(m, this, corFundo, corPlayer1, corPlayer2);
+        m.mudarPainel(j);
     }//GEN-LAST:event_jogarActionPerformed
 
     private void configuracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configuracoesActionPerformed

@@ -51,7 +51,7 @@ public class Config extends javax.swing.JPanel {
         });
 
         corPlayer1.setFont(new java.awt.Font("Cambria", 0, 30)); // NOI18N
-        corPlayer1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Branco", "Preto", "Azul", "Vermelho", "Amarelo", "Verde", "Roxo", "Rosa" }));
+        corPlayer1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Branco", "Preto", "Azul", "Vermelho", "Amarelo", "Verde", "Magenta", "Rosa" }));
         corPlayer1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         corPlayer1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,7 +65,7 @@ public class Config extends javax.swing.JPanel {
         labelCorPlayer1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         corPlayer2.setFont(new java.awt.Font("Cambria", 0, 30)); // NOI18N
-        corPlayer2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Branco", "Preto", "Azul", "Vermelho", "Amarelo", "Verde", "Roxo", "Rosa" }));
+        corPlayer2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Branco", "Preto", "Azul", "Vermelho", "Amarelo", "Verde", "Magenta", "Rosa" }));
         corPlayer2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         corPlayer2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,23 +140,45 @@ public class Config extends javax.swing.JPanel {
         String cor = (String) corFundo.getSelectedItem();
 
         switch (cor) {
-            case "Branco" -> m.setBackground(Color.white);
-            case "Preto" -> m.setBackground(Color.black);
-            case "Azul" -> m.setBackground(Color.cyan);
-            case "Vermelho" -> m.setBackground(Color.red);
-            case "Amarelo" -> m.setBackground(Color.yellow);
-            case "Verde" -> m.setBackground(Color.green);
-            case "Magenta" -> m.setBackground(Color.magenta);
-            case "Rosa" -> m.setBackground(Color.pink);
+            case "Branco" -> i.setCorFundo(Color.white);
+            case "Preto" -> i.setCorFundo(Color.black);
+            case "Azul" -> i.setCorFundo(Color.cyan);
+            case "Vermelho" -> i.setCorFundo(Color.red);
+            case "Amarelo" -> i.setCorFundo(Color.yellow);
+            case "Verde" -> i.setCorFundo(Color.green);
+            case "Magenta" -> i.setCorFundo(Color.magenta);
+            case "Rosa" -> i.setCorFundo(Color.pink);
         }
     }//GEN-LAST:event_corFundoActionPerformed
 
     private void corPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corPlayer1ActionPerformed
-        // TODO add your handling code here:
+        String cor = (String) corPlayer1.getSelectedItem();
+
+        switch (cor) {
+            case "Branco" -> i.setCorPlayer1(Color.white);
+            case "Preto" -> i.setCorPlayer1(Color.black);
+            case "Azul" -> i.setCorPlayer1(Color.cyan);
+            case "Vermelho" -> i.setCorPlayer1(Color.red);
+            case "Amarelo" -> i.setCorPlayer1(Color.yellow);
+            case "Verde" -> i.setCorPlayer1(Color.green);
+            case "Magenta" -> i.setCorPlayer1(Color.magenta);
+            case "Rosa" -> i.setCorPlayer1(Color.pink);
+        }
     }//GEN-LAST:event_corPlayer1ActionPerformed
 
     private void corPlayer2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corPlayer2ActionPerformed
-        // TODO add your handling code here:
+        String cor = (String) corPlayer2.getSelectedItem();
+
+        switch (cor) {
+            case "Branco" -> i.setCorPlayer2(Color.white);
+            case "Preto" -> i.setCorPlayer2(Color.black);
+            case "Azul" -> i.setCorPlayer2(Color.cyan);
+            case "Vermelho" -> i.setCorPlayer2(Color.red);
+            case "Amarelo" -> i.setCorPlayer2(Color.yellow);
+            case "Verde" -> i.setCorPlayer2(Color.green);
+            case "Magenta" -> i.setCorPlayer2(Color.magenta);
+            case "Rosa" -> i.setCorPlayer2(Color.pink);
+        }
     }//GEN-LAST:event_corPlayer2ActionPerformed
 
 
