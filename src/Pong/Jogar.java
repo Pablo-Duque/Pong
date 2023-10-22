@@ -7,7 +7,7 @@ public class Jogar extends javax.swing.JPanel {
     private Menu m;
     private Inicio i;
 
-    public Jogar(Menu m, Inicio i, Color corFundo, Color corPlayer1, Color corPlayer2) {
+    public Jogar(Menu m, Color corFundo, Color corPlayer1, Color corPlayer2) {
         this.m = m;
         initComponents();
         this.setBackground(corFundo);

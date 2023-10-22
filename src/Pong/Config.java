@@ -6,7 +6,8 @@ import java.awt.Color;
 public class Config extends javax.swing.JPanel {
     private Menu m;
     private Inicio i;
-    
+    String comparaFundo, comparaPlay1, comparaPlay2;
+            
     public Config(Menu m, Inicio i){
         this.m = m;
         this.i = i;
@@ -52,6 +53,7 @@ public class Config extends javax.swing.JPanel {
 
         corPlayer1.setFont(new java.awt.Font("Cambria", 0, 30)); // NOI18N
         corPlayer1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Branco", "Preto", "Azul", "Vermelho", "Amarelo", "Verde", "Magenta", "Rosa" }));
+        corPlayer1.setSelectedIndex(2);
         corPlayer1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         corPlayer1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +68,7 @@ public class Config extends javax.swing.JPanel {
 
         corPlayer2.setFont(new java.awt.Font("Cambria", 0, 30)); // NOI18N
         corPlayer2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Branco", "Preto", "Azul", "Vermelho", "Amarelo", "Verde", "Magenta", "Rosa" }));
+        corPlayer2.setSelectedIndex(3);
         corPlayer2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         corPlayer2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,46 +141,177 @@ public class Config extends javax.swing.JPanel {
 
     private void corFundoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corFundoActionPerformed
         String cor = (String) corFundo.getSelectedItem();
-
+        comparaFundo = cor;
+        
         switch (cor) {
-            case "Branco" -> i.setCorFundo(Color.white);
-            case "Preto" -> i.setCorFundo(Color.black);
-            case "Azul" -> i.setCorFundo(Color.cyan);
-            case "Vermelho" -> i.setCorFundo(Color.red);
-            case "Amarelo" -> i.setCorFundo(Color.yellow);
-            case "Verde" -> i.setCorFundo(Color.green);
-            case "Magenta" -> i.setCorFundo(Color.magenta);
-            case "Rosa" -> i.setCorFundo(Color.pink);
+            case "Branco" -> {
+                i.setCorFundo(Color.white);
+                if(comparaPlay1 == "Branco")
+                    i.setCorPlayer1(new Color(204, 204, 204));
+                if(comparaPlay2 == "Branco")
+                    i.setCorPlayer2(new Color(204, 204, 204));
+            }
+            case "Preto" -> {
+                i.setCorFundo(Color.black);
+                if(comparaPlay1 == "Preto")
+                    i.setCorPlayer1(new Color(51, 51, 51));
+                if(comparaPlay2 == "Preto")
+                    i.setCorPlayer2(new Color(51, 51, 51));
+            }
+            case "Azul" -> {
+                i.setCorFundo(Color.cyan);
+                if(comparaPlay1 == "Azul" || comparaPlay1 == null)
+                    i.setCorPlayer1(Color.blue);
+                if(comparaPlay2 == "Azul")
+                    i.setCorPlayer2(Color.blue);
+            }
+            case "Vermelho" -> {
+                i.setCorFundo(Color.red);
+                if(comparaPlay1 == "Vermelho")
+                    i.setCorPlayer1(Color.pink);
+                if(comparaPlay2 == "Vermelho" || comparaPlay2 == null)
+                    i.setCorPlayer2(Color.pink);
+            }
+            case "Amarelo" -> {
+                i.setCorFundo(Color.yellow);
+                if(comparaPlay1 == "Amarelo")
+                    i.setCorPlayer1(new Color(120, 120, 0));
+                if(comparaPlay2 == "Amarelo")
+                    i.setCorPlayer2(new Color(120, 120, 0));
+            }
+            case "Verde" -> {
+                i.setCorFundo(Color.green);
+                if(comparaPlay1 == "Verde")
+                    i.setCorPlayer1(new Color(0, 120, 0));
+                if(comparaPlay2 == "Verde")
+                    i.setCorPlayer2(new Color(0, 120, 0));
+            }
+            case "Magenta" -> {
+            i.setCorFundo(Color.magenta);
+            if(comparaPlay1 == "Magenta")
+                i.setCorPlayer1(Color.pink);
+            if(comparaPlay2 == "Magenta")
+                i.setCorPlayer2(Color.pink);
+            }
+            case "Rosa" -> {
+            i.setCorFundo(Color.pink);
+            if(comparaPlay1 == "Rosa")
+                i.setCorPlayer1(Color.magenta);
+            if(comparaPlay2 == "Rosa")
+                i.setCorPlayer2(Color.magenta);
+            }
         }
     }//GEN-LAST:event_corFundoActionPerformed
 
     private void corPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corPlayer1ActionPerformed
         String cor = (String) corPlayer1.getSelectedItem();
-
+        comparaPlay1 = cor;
+        
         switch (cor) {
-            case "Branco" -> i.setCorPlayer1(Color.white);
-            case "Preto" -> i.setCorPlayer1(Color.black);
-            case "Azul" -> i.setCorPlayer1(Color.cyan);
-            case "Vermelho" -> i.setCorPlayer1(Color.red);
-            case "Amarelo" -> i.setCorPlayer1(Color.yellow);
-            case "Verde" -> i.setCorPlayer1(Color.green);
-            case "Magenta" -> i.setCorPlayer1(Color.magenta);
-            case "Rosa" -> i.setCorPlayer1(Color.pink);
+            case "Branco" -> {
+                if(comparaFundo == "Branco")
+                    i.setCorPlayer1(new Color(204, 204, 204));
+                else
+                    i.setCorPlayer1(Color.white);
+            }
+            case "Preto" -> {
+                if(comparaFundo == "Preto")
+                    i.setCorPlayer1(new Color(51, 51, 51));
+                else
+                    i.setCorPlayer1(Color.black);
+            }
+            case "Azul" -> {
+                if(comparaFundo == "Azul")
+                    i.setCorPlayer1(Color.blue);
+                else
+                    i.setCorPlayer1(Color.cyan);
+            }
+            case "Vermelho" -> {
+                if(comparaFundo == "Vermelho")
+                    i.setCorPlayer1(Color.pink);
+                else
+                    i.setCorPlayer1(Color.red);
+            }
+            case "Amarelo" -> {
+                if(comparaFundo == "Amarelo")
+                    i.setCorPlayer1(new Color(120, 120, 0));
+                else
+                    i.setCorPlayer1(Color.yellow);
+            }
+            case "Verde" -> {
+                if(comparaFundo == "Verde")
+                    i.setCorPlayer1(new Color(0, 120, 0));
+                else
+                    i.setCorPlayer1(Color.green);
+            }
+            case "Magenta" -> {
+                if(comparaFundo == "Magenta")
+                    i.setCorPlayer1(Color.pink);
+                else
+                    i.setCorPlayer1(Color.magenta);
+            }
+            case "Rosa" -> {
+                if(comparaFundo == "Rosa")
+                    i.setCorPlayer1(Color.magenta);
+                else
+                    i.setCorPlayer1(Color.pink);
+            }
         }
     }//GEN-LAST:event_corPlayer1ActionPerformed
 
     private void corPlayer2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corPlayer2ActionPerformed
         String cor = (String) corPlayer2.getSelectedItem();
-
+        comparaPlay2 = cor;
+        
         switch (cor) {
-            case "Branco" -> i.setCorPlayer2(Color.white);
-            case "Preto" -> i.setCorPlayer2(Color.black);
-            case "Azul" -> i.setCorPlayer2(Color.cyan);
-            case "Vermelho" -> i.setCorPlayer2(Color.red);
-            case "Amarelo" -> i.setCorPlayer2(Color.yellow);
-            case "Verde" -> i.setCorPlayer2(Color.green);
-            case "Magenta" -> i.setCorPlayer2(Color.magenta);
-            case "Rosa" -> i.setCorPlayer2(Color.pink);
+            case "Branco" -> {
+                if(comparaFundo == "Branco")
+                    i.setCorPlayer2(new Color(204, 204, 204));
+                else
+                    i.setCorPlayer2(Color.white);
+            }
+            case "Preto" -> {
+                if(comparaFundo == "Preto")
+                    i.setCorPlayer2(new Color(51, 51, 51));
+                else
+                    i.setCorPlayer2(Color.black);
+            }
+            case "Azul" -> {
+                if(comparaFundo == "Azul")
+                    i.setCorPlayer2(Color.blue);
+                else
+                    i.setCorPlayer2(Color.cyan);
+            }
+            case "Vermelho" -> {
+                if(comparaFundo == "Vermelho")
+                    i.setCorPlayer2(Color.pink);
+                else
+                    i.setCorPlayer2(Color.red);
+            }
+            case "Amarelo" -> {
+                if(comparaFundo == "Amarelo")
+                    i.setCorPlayer2(new Color(120, 120, 0));
+                else
+                    i.setCorPlayer2(Color.yellow);
+            }
+            case "Verde" -> {
+                if(comparaFundo == "Verde")
+                    i.setCorPlayer2(new Color(0, 120, 0));
+                else
+                    i.setCorPlayer2(Color.green);
+            }
+            case "Magenta" -> {
+                if(comparaFundo == "Magenta")
+                    i.setCorPlayer2(new Color(0, 0, 0));
+                else
+                    i.setCorPlayer2(Color.magenta);
+            }
+            case "Rosa" -> {
+                if(comparaFundo == "Rosa")
+                    i.setCorPlayer2(new Color(0, 0, 0));
+                else
+                    i.setCorPlayer2(Color.pink);
+            }
         }
     }//GEN-LAST:event_corPlayer2ActionPerformed
 
