@@ -209,7 +209,7 @@ public class Config extends javax.swing.JPanel {
         
         switch (cor) {
             case "Branco" -> {
-                if(comparaFundo == "Branco")
+                if(comparaFundo == "Branco" || comparaFundo == null)
                     i.setCorPlayer1(new Color(204, 204, 204));
                 else
                     i.setCorPlayer1(Color.white);
@@ -265,7 +265,7 @@ public class Config extends javax.swing.JPanel {
         
         switch (cor) {
             case "Branco" -> {
-                if(comparaFundo == "Branco")
+                if(comparaFundo == "Branco" || comparaFundo == null)
                     i.setCorPlayer2(new Color(204, 204, 204));
                 else
                     i.setCorPlayer2(Color.white);
