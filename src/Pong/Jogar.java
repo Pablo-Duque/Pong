@@ -2,99 +2,117 @@
 package Pong;
 
 import java.awt.Color;
+import javax.swing.JPanel;
 
 public class Jogar extends javax.swing.JPanel {
     private Menu m;
     private Inicio i;
-
+    private JPanel player1, player2;
+    private int altura = 100, largura = 25;
+    private int topo1 = 250, fim1 = 250 + altura, topo2 = 250, fim2 = 250 + altura;
+    private int velocidade = 10;
+    //O 250 que passamos na criacao n e o meio, mas sim o topo
+    //Para acharmos o fim e so somar a altura
+    //Esses valores de topo e fim serve para checar a colisao
+    //Uma ideia e usar o getY usado no metodo moverPanelY na bola para compararmos dps
+    
     public Jogar(Menu m, Color corFundo, Color corPlayer1, Color corPlayer2) {
         this.m = m;
         initComponents();
         this.setBackground(corFundo);
+        player1 = new JPanel();
+        player2 = new JPanel();
+        //Seta a posicao
+        player1.setBounds(0, 250, largura, altura);
+        player2.setBounds(1175, 250, largura, altura);
+        //Adiciona ao painel
+        add(player1);
+        add(player2);
         player1.setBackground(corPlayer1);
         player2.setBackground(corPlayer2);
+    }
+    
+    public void moverPanelY(int distancia, JPanel player) {
+        int atual = player.getY();
+        int novo = atual + distancia;
+        player.setBounds(player.getX(), novo, player.getWidth(), player.getHeight());
+        player.repaint();
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelPlayer2 = new javax.swing.JLabel();
-        labelPlayer1 = new javax.swing.JLabel();
-        player1 = new javax.swing.JPanel();
-        player2 = new javax.swing.JPanel();
+        descer = new javax.swing.JButton();
+        subir = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(767, 508));
 
-        labelPlayer2.setFont(new java.awt.Font("Cambria", 0, 30)); // NOI18N
-        labelPlayer2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPlayer2.setText("Cor Player 2");
-        labelPlayer2.setToolTipText("");
-        labelPlayer2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        descer.setText("Descer");
+        descer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                descerActionPerformed(evt);
+            }
+        });
 
-        labelPlayer1.setFont(new java.awt.Font("Cambria", 0, 30)); // NOI18N
-        labelPlayer1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPlayer1.setText("Cor Player 1");
-        labelPlayer1.setToolTipText("");
-        labelPlayer1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout player1Layout = new javax.swing.GroupLayout(player1);
-        player1.setLayout(player1Layout);
-        player1Layout.setHorizontalGroup(
-            player1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        player1Layout.setVerticalGroup(
-            player1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 199, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout player2Layout = new javax.swing.GroupLayout(player2);
-        player2.setLayout(player2Layout);
-        player2Layout.setHorizontalGroup(
-            player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        player2Layout.setVerticalGroup(
-            player2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 199, Short.MAX_VALUE)
-        );
+        subir.setText("Subir");
+        subir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
+                .addContainerGap(224, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(labelPlayer1, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                    .addComponent(player1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(labelPlayer2, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                    .addComponent(player2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(86, Short.MAX_VALUE))
+                    .addComponent(subir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(descer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(904, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(113, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(player1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(player2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(239, Short.MAX_VALUE)
+                .addComponent(subir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addComponent(descer, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(269, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void descerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descerActionPerformed
+        //Para a raquete nao sumir
+        if (fim1 >= 650)
+            moverPanelY(0, player1);
+        else{
+            moverPanelY(velocidade, player1);
+            topo1 += velocidade;
+            fim1 += velocidade;
+            //Println para fins de testes
+            System.out.println(topo1);
+            System.out.println(fim1 + "\n");
+        }
+    }//GEN-LAST:event_descerActionPerformed
+
+    private void subirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subirActionPerformed
+        if (topo1 <= 0)
+            moverPanelY(0, player1);
+        else{
+            moverPanelY(-velocidade, player1);
+            topo1 -= velocidade;
+            fim1 -= velocidade;
+            System.out.println(topo1);
+            System.out.println(fim1 + "\n");
+        }
+    }//GEN-LAST:event_subirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel labelPlayer1;
-    private javax.swing.JLabel labelPlayer2;
-    private javax.swing.JPanel player1;
-    private javax.swing.JPanel player2;
+    private javax.swing.JButton descer;
+    private javax.swing.JButton subir;
     // End of variables declaration//GEN-END:variables
 }

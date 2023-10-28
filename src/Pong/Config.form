@@ -17,22 +17,22 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace pref="39" max="32767" attributes="0"/>
+              <EmptySpace pref="106" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="corFundo" pref="183" max="32767" attributes="0"/>
+                  <Component id="corFundo" pref="244" max="32767" attributes="0"/>
                   <Component id="labelCorFundo" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="59" max="32767" attributes="0"/>
+              <EmptySpace pref="120" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="corPlayer1" pref="183" max="32767" attributes="0"/>
+                  <Component id="corPlayer1" pref="244" max="32767" attributes="0"/>
                   <Component id="labelCorPlayer1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="52" max="32767" attributes="0"/>
+              <EmptySpace pref="113" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="corPlayer2" pref="183" max="32767" attributes="0"/>
+                  <Component id="corPlayer2" pref="244" max="32767" attributes="0"/>
                   <Component id="labelCorPlayer2" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="68" max="32767" attributes="0"/>
+              <EmptySpace pref="129" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -65,7 +65,7 @@
                       <Component id="corFundo" min="-2" pref="66" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="203" max="32767" attributes="0"/>
+              <EmptySpace pref="274" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
