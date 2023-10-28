@@ -187,20 +187,25 @@ public class Config extends javax.swing.JPanel {
                     i.setCorPlayer2(new Color(0, 120, 0));
             }
             case "Magenta" -> {
-            i.setCorFundo(Color.magenta);
-            if(comparaPlay1 == "Magenta")
-                i.setCorPlayer1(Color.pink);
-            if(comparaPlay2 == "Magenta")
-                i.setCorPlayer2(Color.pink);
+                i.setCorFundo(Color.magenta);
+                if(comparaPlay1 == "Magenta")
+                    i.setCorPlayer1(Color.pink);
+                if(comparaPlay2 == "Magenta")
+                    i.setCorPlayer2(Color.pink);
             }
             case "Rosa" -> {
-            i.setCorFundo(Color.pink);
-            if(comparaPlay1 == "Rosa")
-                i.setCorPlayer1(Color.magenta);
-            if(comparaPlay2 == "Rosa")
-                i.setCorPlayer2(Color.magenta);
+                i.setCorFundo(Color.pink);
+                if(comparaPlay1 == "Rosa")
+                    i.setCorPlayer1(Color.magenta);
+                if(comparaPlay2 == "Rosa")
+                    i.setCorPlayer2(Color.magenta);
             }
         }
+
+        if(cor != "Branco" && comparaPlay1 == "Branco")
+            i.setCorPlayer1(Color.white);
+        if(cor != "Branco" && comparaPlay2 == "Branco")
+            i.setCorPlayer2(Color.white);
     }//GEN-LAST:event_corFundoActionPerformed
 
     private void corPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corPlayer1ActionPerformed
