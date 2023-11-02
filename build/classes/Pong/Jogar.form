@@ -21,44 +21,13 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="224" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="subir" max="32767" attributes="0"/>
-                  <Component id="descer" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace pref="904" max="32767" attributes="0"/>
-          </Group>
+          <EmptySpace min="0" pref="1200" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="239" max="32767" attributes="0"/>
-              <Component id="subir" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
-              <Component id="descer" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace pref="269" max="32767" attributes="0"/>
-          </Group>
+          <EmptySpace min="0" pref="650" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
-  <SubComponents>
-    <Component class="javax.swing.JButton" name="descer">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Descer"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="descerActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="subir">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Subir"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subirActionPerformed"/>
-      </Events>
-    </Component>
-  </SubComponents>
 </Form>

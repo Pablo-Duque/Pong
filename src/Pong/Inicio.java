@@ -110,8 +110,8 @@ public class Inicio extends javax.swing.JPanel {
     }//GEN-LAST:event_sairActionPerformed
 
     private void jogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jogarActionPerformed
-        Jogar j = new Jogar(m, corFundo, corPlayer1, corPlayer2);
-        m.mudarPainel(j);
+        m.setVisible(false);
+        new TelaJogo(m, corFundo, corPlayer1, corPlayer2).setVisible(true);
     }//GEN-LAST:event_jogarActionPerformed
 
     private void configuracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configuracoesActionPerformed
