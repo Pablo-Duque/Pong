@@ -9,7 +9,6 @@ public class Raquete extends javax.swing.JPanel {
         this.topo = posicao;
         this.fim = posicao + altura;
         initComponents();
-        System.out.println(fim);
     }
     
     public void moverPanelY(int distancia) {
@@ -36,7 +35,6 @@ public class Raquete extends javax.swing.JPanel {
             moverPanelY(velocidade);
             topo += velocidade;
             fim += velocidade;
-            System.out.println(fim);
         }
     }
     @SuppressWarnings("unchecked")
