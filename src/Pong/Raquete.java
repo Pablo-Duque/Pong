@@ -3,12 +3,13 @@ package Pong;
 public class Raquete extends javax.swing.JPanel {
     private int topo, fim, altura, largura;
     
-    public Raquete(int posicao, int altura, int largura) {
+    public Raquete(int posicao, int largura, int altura) {
         this.altura = altura;
         this.largura = largura;
         this.topo = posicao;
         this.fim = posicao + altura;
         initComponents();
+        System.out.println(fim);
     }
     
     public void moverPanelY(int distancia) {
@@ -35,6 +36,7 @@ public class Raquete extends javax.swing.JPanel {
             moverPanelY(velocidade);
             topo += velocidade;
             fim += velocidade;
+            System.out.println(fim);
         }
     }
     @SuppressWarnings("unchecked")
