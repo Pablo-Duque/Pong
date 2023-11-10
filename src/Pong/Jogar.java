@@ -7,6 +7,7 @@ import java.awt.event.*;
 public class Jogar extends javax.swing.JPanel implements KeyListener{
     private Menu m;
     private Inicio i;
+    private Pontuacao scoreP1, scoreP2;
     private TelaJogo tj;
     private Raquete player1, player2;
     private int altura = 100, largura = 25, velocidade = 10, posicao = 250;
@@ -18,10 +19,19 @@ public class Jogar extends javax.swing.JPanel implements KeyListener{
         this.setBackground(corFundo);
         player1 = new Raquete(posicao, largura, altura);
         player2 = new Raquete(posicao, largura, altura);
+        scoreP1 = new Pontuacao(corFundo);
+        scoreP2 = new Pontuacao(corFundo);
         player1.setBounds(0, posicao, largura, altura);
         player2.setBounds(1175, posicao, largura, altura);
+        scoreP1.setBounds(440, 10, 70, 70);
+        scoreP2.setBounds(700, 10, 70, 70);
+        scoreP1.foiPonto();
+        scoreP1.foiPonto();
+        scoreP2.foiPonto();
         add(player1);
         add(player2);
+        add(scoreP1);
+        add(scoreP2);
         player1.setBackground(corPlayer1);
         player2.setBackground(corPlayer2);
     }
