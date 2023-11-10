@@ -7,9 +7,9 @@ import java.awt.event.*;
 public class Jogar extends javax.swing.JPanel implements KeyListener{
     private Menu m;
     private Inicio i;
-    private Pontuacao scoreP1, scoreP2;
     private TelaJogo tj;
     private Raquete player1, player2;
+    private Pontuacao p1, p2;
     private int altura = 100, largura = 25, velocidade = 10, posicao = 250;
     
     public Jogar(TelaJogo tj, Menu m, Color corFundo, Color corPlayer1, Color corPlayer2) {
@@ -19,19 +19,16 @@ public class Jogar extends javax.swing.JPanel implements KeyListener{
         this.setBackground(corFundo);
         player1 = new Raquete(posicao, largura, altura);
         player2 = new Raquete(posicao, largura, altura);
-        scoreP1 = new Pontuacao(corFundo);
-        scoreP2 = new Pontuacao(corFundo);
         player1.setBounds(0, posicao, largura, altura);
         player2.setBounds(1175, posicao, largura, altura);
-        scoreP1.setBounds(440, 10, 70, 70);
-        scoreP2.setBounds(700, 10, 70, 70);
-        scoreP1.foiPonto();
-        scoreP1.foiPonto();
-        scoreP2.foiPonto();
         add(player1);
         add(player2);
-        add(scoreP1);
-        add(scoreP2);
+        p1 = new Pontuacao();
+        p2 = new Pontuacao();
+        p1.setBounds(400, 10, 50, altura);
+        p2.setBounds(500, 10, 50, altura);
+        add(p1);
+        add(p2);
         player1.setBackground(corPlayer1);
         player2.setBackground(corPlayer2);
     }
@@ -76,11 +73,11 @@ public class Jogar extends javax.swing.JPanel implements KeyListener{
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1200, Short.MAX_VALUE)
+            .addGap(0, 767, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addGap(0, 508, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
