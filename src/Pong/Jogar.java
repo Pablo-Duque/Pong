@@ -6,7 +6,6 @@ import java.awt.event.*;
 
 public class Jogar extends javax.swing.JPanel implements KeyListener{
     private Menu m;
-    private Inicio i;
     private Pontuacao scoreP1, scoreP2;
     private TelaJogo tj;
     private Raquete player1, player2;
